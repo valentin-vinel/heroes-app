@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
+import { HEROES } from './heroes/mock-heroes-list';
 
 @Component({
   selector: 'app-root',
@@ -8,6 +9,14 @@ import { RouterOutlet } from '@angular/router';
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
-export class AppComponent {
-  title = 'marvel-app';
+export class AppComponent implements OnInit {
+  
+  heroList = HEROES;
+
+  constructor() {}
+
+  ngOnInit() {
+    console.table(this.heroList);
+  }
+
 }

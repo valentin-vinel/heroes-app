@@ -1,0 +1,12 @@
+<div class="container">
+    @for (hero of heroList(); track $index) {
+      <div class="card" (click)="goToHeroDetail(hero)">
+        <h2>{{hero.name}}</h2>
+        <div class="box_img">
+          <img class="hero_img" src="{{hero.image}}" alt="Image du héro">
+        </div>
+        <p>{{hero.description}}</p>
+      </div>
+    }
+</div>
+  
