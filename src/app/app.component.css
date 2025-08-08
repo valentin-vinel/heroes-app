@@ -6,3 +6,26 @@ h1 {
     text-align: center;
 }
 
+.header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px
+}
+
+.btn_add-hero {
+    background-color: rgb(168, 0, 0);
+    text-transform: uppercase;
+    font-size: 18px;
+    color: white;
+    width: 150px;
+    height: 2,8rem;
+    border-radius: 1rem;
+    margin-bottom: 3rem;
+
+}
+.btn_add-hero:hover {
+    background-color: white;
+    border: 2px solid rgb(168, 0, 0);
+    color: rgb(168, 0, 0);
+}

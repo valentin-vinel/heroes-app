@@ -8,7 +8,7 @@ export class Hero {
     constructor(
         name: string = 'Entrer un nom',
         description: string = 'Entrer une description',
-        image: string = 'Saisissez un lien URL .png',
+        image: string = 'Saisissez un lien URL',
         comics: string[] = ['Comics 1'],
     ) {
         this.name = name;

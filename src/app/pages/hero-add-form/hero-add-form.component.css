@@ -42,3 +42,45 @@
     object-fit: cover;
     border-radius: 1rem;
 }
+
+.preview, .main {
+    display: inline-block;
+    vertical-align: top;
+}
+
+.preview {
+    margin: 20px;
+}
+
+.main {
+    width: calc(100% - 500px);
+}
+
+form {
+    max-width: 300px;
+}
+
+.form-field {
+    display: flex;
+    flex-direction: column;
+    margin: 10px 0;
+}
+
+label {
+    font-size: small;
+}
+
+.ng-dirty.ng-invalid, .ng-touched.ng-invalid {
+    border-color: red;
+    border-width: 1px;
+}
+
+.error {
+    font-size: x-small;
+    color: red;
+}
+
+.button-container {
+    display: flex;
+    gap: 10px;
+}

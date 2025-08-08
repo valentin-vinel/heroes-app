@@ -1,6 +1,7 @@
-import { Component, OnInit } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { Component, inject, OnInit } from '@angular/core';
+import { Router, RouterOutlet } from '@angular/router';
 import { HEROES } from './heroes/mock-heroes-list';
+import { HeroService } from './services/hero.service';
 
 @Component({
   selector: 'app-root',
@@ -9,14 +10,13 @@ import { HEROES } from './heroes/mock-heroes-list';
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
-export class AppComponent implements OnInit {
-  
-  heroList = HEROES;
+export class AppComponent {
 
-  constructor() {}
+  private heroService = inject(HeroService);
+  private router = inject(Router);
 
-  ngOnInit() {
-    console.table(this.heroList);
+  goToAddHeroForm() {
+    this.router.navigate(['add-hero'])
   }
 
 }

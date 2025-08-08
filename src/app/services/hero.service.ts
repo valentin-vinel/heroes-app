@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { inject, Injectable } from '@angular/core';
-import { catchError, Observable, of, tap } from 'rxjs';
+import { catchError, map, Observable, of, tap } from 'rxjs';
 import { Hero } from '../heroes/hero';
 
 @Injectable({
@@ -16,6 +16,27 @@ export class HeroService {
       catchError((error) => this.handleError(error, null))
     )
   }
+
+  getHeroById(id: number): Observable<Hero> {
+    return this.http.get<Hero>('api/heroes/' + id).pipe(
+      tap((response) => this.log(response)),
+      catchError((error) => this.handleError(error, null))
+    )
+  }
+
+  add(hero: Hero): Observable<Hero> {
+		return this.http.post<Hero>('api/heroes/', hero).pipe(
+			tap((response) => this.log(response)),
+      catchError((error) => this.handleError(error, null))
+		);
+	}
+
+  update(hero: Hero): Observable<Hero> {
+		return this.http.put<Hero>('api/heroes/' + hero.id, hero).pipe(
+			tap((response) => this.log(response)),
+      catchError((error) => this.handleError(error, null))
+		);
+	}
 
   private log(response: any) {
     console.table(response);
