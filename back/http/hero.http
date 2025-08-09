@@ -1,0 +1,45 @@
+###
+# GET all AppUser
+GET http://localhost:5000/heroes
+Content-Type: application/json
+###
+
+###
+# GET one hero by id
+GET http://localhost:5000/heroes/4
+Content-Type: application/json
+###
+
+### 
+# CREATE hero
+POST http://localhost:5000/heroes
+Content-Type: application/json
+
+{
+    "hero_name": "New Hero",
+    "firstname": "New",
+    "lastname": "Hero",
+    "profile_img": "https://i.pinimg.com/736x/67/12/5a/67125adbe98c36839f08af0aac919250.jpg",
+    "png_img": "https://i.pinimg.com/736x/67/12/5a/67125adbe98c36839f08af0aac919250.jpg",
+    "description": "Description of the new hero", 
+    "bg_gradient": "linear-gradient(to right, #3d3a10ff, #888a08ff, #c5c905ff)", 
+    "name_color": "linear-gradient(to right, #c5c905ff, #888a08ff, #3d3a10ff)",
+    "id_app_user": 2
+}
+###
+
+### 
+# UPDATE Amusement
+PATCH http://localhost:5000/heroes/5
+Content-Type: application/json
+
+{
+    "hero_name": "Batman",
+    "lastname": "Batman"
+}
+###
+
+###
+# DELETE Amusement
+DELETE http://localhost:5000/heroes/5
+###

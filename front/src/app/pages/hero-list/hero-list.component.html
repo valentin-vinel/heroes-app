@@ -1,0 +1,16 @@
+<div class="container">
+    @for (hero of heroList(); track $index) {
+      <div class="card" (click)="goToHeroDetail(hero)">
+        <h2 
+          [style.color]="hero.name_color"
+          class="hero-name">
+          {{ hero.hero_name }}
+        </h2>
+        <div class="box_img">
+          <img class="hero_img" src="{{hero.profile_img}}" alt="Image du héro">
+        </div>
+        <p>{{hero.description}}</p>
+      </div>
+    }
+</div>
+  
