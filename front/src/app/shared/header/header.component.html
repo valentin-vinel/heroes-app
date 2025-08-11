@@ -1,0 +1,19 @@
+<header class="header">
+  <nav class="navbar">
+    <img class="logo" src="../../../assets/public/Marvel_Logo.svg.png" alt="Logo">
+
+    <!-- Bouton burger -->
+    <button class="burger" (click)="toggleMenu()">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+
+    <div class="navbar_link" [class.open]="isMenuOpen">
+      <a href="/">HEROES</a>
+      <a href="/">ABOUT</a>
+      <a href="/">ADD MY HERO</a>
+      <a href="/">CONTACT</a>
+    </div>
+  </nav>
+</header>
