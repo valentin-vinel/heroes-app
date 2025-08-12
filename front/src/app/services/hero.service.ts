@@ -9,7 +9,7 @@ import { Hero } from '../heroes/hero';
 export class HeroService {
 
   private http = inject(HttpClient);
-  private BASE_URL = 'http://localhost:5000/'
+  private BASE_URL = 'https://heroes-app-api.onrender.com/'
 
   getHeroes(): Observable<Hero[]> {
     return this.http.get<Hero[]>(this.BASE_URL + 'heroes').pipe(
