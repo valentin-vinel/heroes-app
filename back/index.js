@@ -10,7 +10,8 @@ const port = process.env.PORT || 5000;
 const corsOptions = {
 	// Ici, j'indique le ou les domaines qui ont le droit d'accéder à mon API
 	origin: [
-		`http://localhost:4200`
+		`http://localhost:4200`,
+		`https://heroes-app-vv.web.app/`
 	],
 	methods: ["GET", "POST", "PATCH", "DELETE"],
 	credentials: true // autorisation des credentials reçu par le front
