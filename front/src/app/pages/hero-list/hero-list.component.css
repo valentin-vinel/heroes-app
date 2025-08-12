@@ -18,15 +18,16 @@
 }
 
 .card {
-  position: relative;
-  width: 90%;
-  height: 100px;
-  overflow: hidden;
-  border-radius: 1rem;
-  transition: height 0.4s ease-in-out;
+    /* background-image: var(--heroProfileImg); */
+    position: relative;
+    width: 90%;
+    height: 100px;
+    overflow: hidden;
+    border-radius: 1rem;
+    transition: height 0.4s ease-in-out;
 }
 .card:hover{
-    height: 300px;
+    height: 400px;
 }
 
 .hero_img {
