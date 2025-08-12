@@ -1,10 +1,28 @@
-* {
-    font-family: Roboto, sans-serif;
+.background {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100vh;
+    z-index: -1;
 }
 
 .container {
     display: flex;
     flex-direction: column;
+    width: 100%;
+    padding-bottom: 120px;
+    color: white;
+}
+
+.visu {
+    display: flex;
+    flex-direction: column;
+}
+
+.container, .visu{
+    position: relative;
+    top: 40px;
 }
 
 .card {
@@ -12,14 +30,42 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    
-    width: 350px;
-    padding: 1rem;
-    margin: 1rem auto;
-    border: 2px solid rgb(168, 0, 0);
-    border-radius: 2rem 0;
+
+    width: 400px;
+    /* padding: 1rem; */
+    margin: 2rem auto;
     text-align: center;
-    margin-bottom: 5rem;
+    gap: 1rem;
+}
+
+.hp_preview {
+    width: 90%;
+    height: 100px;
+    overflow: hidden;
+    border-radius: 1rem;
+    transition: height 0.4s ease-in-out;
+}
+.hp_preview > img {
+    height: auto;
+    object-fit: cover;
+}
+.hp_preview:hover {
+    height: 300px;
+}
+
+.hero_img {
+    height: 300px;
+    object-fit: cover;
+}
+
+
+.main {
+    padding: 2rem;
+}
+
+.input_color {
+    display: flex;
+    gap: 1rem;
 }
 
 .btn_back {
@@ -31,43 +77,10 @@
     margin: auto;
 }
 
-.box_img {
-    height: 300px;
-    width: 300px;
-}
-
-.hero_img {
-    height: 100%;
-    width: 100%;
-    object-fit: cover;
-    border-radius: 1rem;
-}
-
-.preview, .main {
-    display: inline-block;
-    vertical-align: top;
-}
-
-.preview {
-    margin: 20px;
-}
-
-.main {
-    width: calc(100% - 500px);
-}
-
-form {
-    max-width: 300px;
-}
-
 .form-field {
     display: flex;
     flex-direction: column;
     margin: 10px 0;
-}
-
-label {
-    font-size: small;
 }
 
 .ng-dirty.ng-invalid, .ng-touched.ng-invalid {
@@ -81,6 +94,18 @@ label {
 }
 
 .button-container {
+    margin-top: 3rem;
     display: flex;
     gap: 10px;
+    justify-content: center;
+}
+
+.gradient-text {
+    background: var(--nameGradient);
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+    font-weight: 900;
+    text-transform: uppercase;
+    font-size: 56px;
 }

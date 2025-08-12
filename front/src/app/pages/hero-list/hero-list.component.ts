@@ -22,8 +22,12 @@ export class HeroListComponent {
   heroList = toSignal(this.heroService.getHeroes());
 
   goToHeroDetail(hero: Hero) {
-    console.log('allo', hero.id)
+    console.log('allo', this.heroList)
     this.router.navigate(['/hero', hero.id])
+  }
+
+  goToAddHeroForm() {
+    this.router.navigate(['/add-hero'])
   }
 
 }

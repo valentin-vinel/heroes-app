@@ -1,34 +1,116 @@
-* {
-    font-family: Roboto, sans-serif;
+.background {
+    background: linear-gradient(to bottom, #04172B, #4A1323);
+    position: fixed;
+    z-index: -1;
+    width: 100%;
+    height: 100vh;
 }
 
-.container {
-    display: flex;
-    flex-wrap: wrap;
-}
-
-.card {
+.main {
+    position: absolute;
+    top: 90px;
+    padding-bottom: 100px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    
-    width: 350px;
-    padding: 1rem;
-    margin: 1rem auto;
-    border: 2px solid rgb(168, 0, 0);
-    border-radius: 2rem 0;
-    text-align: center;
+    gap: 1rem;
 }
 
-.box_img {
+.card {
+  position: relative;
+  width: 90%;
+  height: 100px;
+  overflow: hidden;
+  border-radius: 1rem;
+  transition: height 0.4s ease-in-out;
+}
+.card:hover{
     height: 300px;
-    width: 300px;
 }
 
 .hero_img {
-    height: 100%;
-    width: 100%;
-    object-fit: cover;
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+.btn-add {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 90%;
+    height: 100px;
+    background: linear-gradient(to right, #07284d, #851621);
+    color: rgb(161, 161, 161);
+    border: 2px solid rgb(161, 161, 161);
     border-radius: 1rem;
+    font-size: 40px;
+}
+.btn-add > span {
+    font-size: 64px;
+    margin-right: 1rem;
+    font-weight: small;
+}
+
+.btn-add:hover {
+    color: white;
+    border: 2px solid white;
+}
+
+.title {
+    font-size: 70px;
+    text-align: center;
+    height: 80px;
+}
+
+.gradient-text {
+  background: linear-gradient(to bottom, #FFFFFF, #3a3a3a);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  -webkit-text-fill-color: transparent;
+}
+
+@media (min-width: 1024px) {
+    .container {
+        display: flex;
+        justify-content: center;
+    }
+
+    .main {
+        flex-direction: row;
+        top: 100px;
+        padding: 0 2rem;
+        padding-bottom: 0px;
+        overflow-x: visible;
+        scroll-padding-left: 0;
+    }
+
+    .card {
+        height: 600px;
+        width: 150px;
+        transition: none;
+        transition: width 0.4s ease-in-out;
+        flex: 0 0 auto; 
+    }
+    .card:hover {
+        height: 600px;
+        width: 600px;
+    }
+
+    .hero_img {
+        height: 600px;
+    }
+
+    .btn-add {
+        position: fixed;
+        bottom: 90px;
+        width: 500px;
+        height: 80px;
+    }
+    /* .btn-add > span {
+        margin-right: 0rem;
+        margin-bottom: 1rem;
+    } */
 }

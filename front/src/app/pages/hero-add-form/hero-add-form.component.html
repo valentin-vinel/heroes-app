@@ -1,46 +1,87 @@
-<div class="container preview">
-    <div class="card">
-      <h2>{{hero.name}}</h2>
-      <div class="box_img">
-        <img class="hero_img" src="{{hero.image}}" alt="Image du héro">
-      </div>
-      <p>{{hero.description}}</p>
-    </div>
-</div>
+<div class="background" [style.background]="bgGradient"></div>
 
-<div class="main">
-  <form [formGroup]="formGroup" (submit)="submit($event)">
-    <div class="form-field">
-      <label for="name">Name</label>
-      <input id="name" name="name" type="text" formControlName="name">
-      @if (isFieldValid('name')) {
-        <div class="error">This field is required.</div>
-      }
-    </div>
-    <div class="form-field">
-      <label for="description">Description</label>
-      <input id="description" name="description" type="text" formControlName="description">
-      @if (isFieldValid('description')) {
-        <div class="error">This field is required.</div>
-      }
-    </div>
-    <div class="form-field">
-      <label for="image">Image</label>
-      <input id="image" name="image" type="text"  formControlName="image">
-      @if (isFieldValid('image')) {
-        <div class="error">This field is required.</div>
-      }
-    </div>
-    <div class="form-field">
-      <label for="comics">Comics</label>
-      <input id="comics" name="comics" type="text"  formControlName="comics">
-      @if (isFieldValid('comics')) {
-        <div class="error">This field is required.</div>
-      }
-    </div>
-    <div class="button-container">
-      <button (click)="navigateBack()">Cancel</button>
-      <button type="submit" [disabled]="formGroup.invalid">Save</button>
-    </div>
-  </form>
+<div class="container">
+  <div class="visu">
+      <div class="card">
+        <div class="hp_preview">
+          <img src="{{hero.profile_img}}" alt="Image du héro">
+        </div>
+        <h2 [style.--nameGradient]="nameColorGradient" class="gradient-text">{{hero.hero_name}}</h2>
+          <img class="hero_img" src="{{hero.png_img}}" alt="Image PNG du héro">
+        <p>{{hero.description}}</p>
+      </div>
+  </div>
+  
+  <div class="main">
+    <form [formGroup]="formGroup" (submit)="submit($event)">
+      <div class="form-field">
+        <label for="name">Nom héro:</label>
+        <input id="name" name="name" type="text" formControlName="hero_name">
+        @if (isFieldValid('name')) {
+          <div class="error">Ce champ est obligatoire.</div>
+        }
+      </div>
+      <div class="form-field">
+        <label for="firstname">Prénom du héro:</label>
+        <input id="firstname" name="firstname" type="text" formControlName="firstname">
+        @if (isFieldValid('firstname')) {
+          <div class="error">Ce champ est obligatoire.</div>
+        }
+      </div>
+      <div class="form-field">
+        <label for="lastname">Nom de famille du héro:</label>
+        <input id="lastname" name="lastname" type="text" formControlName="lastname">
+        @if (isFieldValid('lastname')) {
+          <div class="error">Ce champ est obligatoire.</div>
+        }
+      </div>
+      <div class="form-field">
+        <label for="description">Description:</label>
+        <input id="description" name="description" type="text" formControlName="description">
+        @if (isFieldValid('description')) {
+          <div class="error">Ce champ est obligatoire.</div>
+        }
+      </div>
+      <div class="form-field">
+        <label for="profile_img">Image de profil (page d'accueil):</label>
+        <input id="profile_img" name="profile_img" type="text"  formControlName="profile_img">
+        @if (isFieldValid('profile_img')) {
+          <div class="error">Ce champ est obligatoire.</div>
+        }
+      </div>
+      <div class="form-field">
+        <label for="png_img">Image PNG (page détail):</label>
+        <input id="png_img" name="png_img" type="text"  formControlName="png_img">
+        @if (isFieldValid('png_img')) {
+          <div class="error">Ce champ est obligatoire.</div>
+        }
+      </div>
+      <div class="form-field">
+        <label>Couleur background (de gauche à droite):</label>
+        <div class="input_color">
+          <input id="bg_color_1" name="bg_color_1" type="color"  formControlName="bg_color_1">
+          <input id="bg_color_2" name="bg_color_2" type="color"  formControlName="bg_color_2">
+          <input id="bg_color_3" name="bg_color_3" type="color"  formControlName="bg_color_3">
+        </div>
+        @if (isFieldValid('bg_color_1')) {
+          <div class="error">Ce champ est obligatoire.</div>
+        }
+      </div>
+      <div class="form-field">
+        <label>Couleur nom du héro:</label>
+        <div class="input_color">
+          <input id="name_color_1" name="name_color_1" type="color"  formControlName="name_color_1">
+          <input id="name_color_2" name="name_color_2" type="color"  formControlName="name_color_2">
+          <input id="name_color_3" name="name_color_3" type="color"  formControlName="name_color_3">
+        </div>
+        @if (isFieldValid('name_color_1')) {
+          <div class="error">Ce champ est obligatoire.</div>
+        }
+      </div>
+      <div class="button-container">
+        <button (click)="navigateBack()">Cancel</button>
+        <button type="submit" [disabled]="formGroup.invalid">Save</button>
+      </div>
+    </form>
+  </div>
 </div>

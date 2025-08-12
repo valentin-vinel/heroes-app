@@ -79,6 +79,50 @@ const heroes = [
         name_color: "linear-gradient(to right, #4A4576, #060E17, #898989)",
         id_app_user: 1
     },
+    { 
+        hero_name: 'Hulk', 
+        firstname: "Bruce", 
+        lastname: "Banner", 
+        profile_img: "hulkhp.jpg",
+        png_img: "https://img.genially.com/5714b2b11561e80398770d80/4f692632-3b14-41a8-aadb-e34dff35b042.png",
+        description: "Hulk, alias Bruce Banner, est un scientifique brillant qui se transforme en un géant vert doté d’une force colossale lorsqu’il est en colère ou stressé, à la suite d’une exposition à des rayons gamma. Membre des Avengers, il est à la fois un héros puissant et une force difficile à contrôler.",
+        bg_gradient: "linear-gradient(to right, #3F5A37, #323E2C, #111914)",
+        name_color: "linear-gradient(to right, #1F1F1F, #82A655, #F3F2C4)",
+        id_app_user: 1
+    },
+    { 
+        hero_name: 'Thor', 
+        firstname: "Thor", 
+        lastname: "Odinson", 
+        profile_img: "thorhp.jpg",
+        png_img: "https://freepngimg.com/download/thor/8-2-thor-png-clipart.png",
+        description: "Thor est le dieu du tonnerre de l’univers Marvel, inspiré de la mythologie nordique. Fils d’Odin et prince d’Asgard, il manie le marteau enchanté Mjolnir, qui lui confère la maîtrise de la foudre, la capacité de voler et une force surhumaine. Membre des Avengers, il protège à la fois la Terre et les Neuf Royaumes.",
+        bg_gradient: "linear-gradient(to right, #6C6D6D, #313232, #64151D)",
+        name_color: "linear-gradient(to right, #64151D, #6C6D6D)",
+        id_app_user: 1
+    },
+    { 
+        hero_name: 'Doctor Strange', 
+        firstname: "Stephen", 
+        lastname: "Strange", 
+        profile_img: "strangehp.jpg",
+        png_img: "https://wallpapers.com/images/hd/doctor-strange-comic-art-png-05212024-0ozj4cwda1fni896.jpg",
+        description: "Doctor Strange, alias Stephen Strange, est un ancien neurochirurgien de génie qui, après un accident ayant ruiné sa carrière, part en quête de guérison et découvre les arts mystiques. Formé par l’Ancien, il devient le Sorcier Suprême, protecteur de la Terre contre les menaces magiques et interdimensionnelles, utilisant des artefacts puissants comme l’Œil d’Agamotto et la Cape de Lévitation.",
+        bg_gradient: "linear-gradient(to right, #107C9D, #203242, #AC2A19)",
+        name_color: "linear-gradient(to right, #9A2214, #000000, #11789A)",
+        id_app_user: 1
+    },
+    { 
+        hero_name: 'Wolverine', 
+        firstname: "James Logan", 
+        lastname: "Howlett", 
+        profile_img: "wolverinehp.jpg",
+        png_img: "https://www.pngall.com/wp-content/uploads/2016/05/Wolverine-PNG.png",
+        description: "Wolverine, de son vrai nom James “Logan” Howlett, est un mutant doté d’un facteur de régénération exceptionnel, de sens hyper-développés et de griffes rétractiles en adamantium, un métal quasi indestructible. Combattant redoutable et membre emblématique des X-Men, il est connu pour son tempérament sauvage, sa résilience et son passé mystérieux.",
+        bg_gradient: "linear-gradient(to right, #020203, #FCE761, #323961)",
+        name_color: "linear-gradient(to right, #E5D258, #2D3250, #060504)",
+        id_app_user: 1
+    },
 ];
 
 for (const hero of heroes) {

@@ -1,14 +1,18 @@
 footer {
     background: linear-gradient(to top, #000000, #00000000);
     padding: 1rem;
+    display: flex;
+    align-items: flex-end; /* aligne le contenu en bas */
+    justify-content: center; /* centre horizontalement */
     text-align: center;
     height: 80px;
     position: fixed;
     bottom: 0;
+    width: 100%;
 }
 
 footer p {
-    color: #ffffff;
+    color: #ffffff5b;
     font-size: 0.8rem;
     margin: 0;
 }
