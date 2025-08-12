@@ -46,6 +46,7 @@
     border: 2px solid rgb(161, 161, 161);
     border-radius: 1rem;
     font-size: 40px;
+    line-height: 1;
 }
 .btn-add > span {
     font-size: 64px;
