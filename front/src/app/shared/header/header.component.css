@@ -35,6 +35,10 @@
     color: white;
     text-decoration: none;
 }
+.navbar_link a:hover {
+    color: #d30e0e;
+    font-weight: 600;
+}
 
 .navbar_link.open {
     display: flex;

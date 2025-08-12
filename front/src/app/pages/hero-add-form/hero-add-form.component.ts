@@ -35,7 +35,7 @@ export class HeroAddFormComponent implements OnInit, OnDestroy {
     bg_color_3: ['#AC8A49', [Validators.required]],
     name_color_1: ['#AC8A49', [Validators.required]],
     name_color_2: ['#201E40', [Validators.required]],
-    name_color_3: ['#9186AE', [Validators.required]]
+    name_color_3: ['#9186AE', [Validators.required]],
 	});
 
   get bgGradient() {
@@ -71,12 +71,20 @@ export class HeroAddFormComponent implements OnInit, OnDestroy {
 
   submit(event: Event) {
 		event.preventDefault();
+
+    let payload = {
+      ...this.hero,
+      bg_gradient: this.bgGradient, // ajout du gradient
+      name_color: this.nameColorGradient, // ajout du gradient nom
+      id_app_user: 1 // valeur fixe pour l'instant
+    };
+
 		let saveObservable;
 		if (this.heroId === -1) {
-			saveObservable = this.heroService.add(this.hero);
+			saveObservable = this.heroService.add(payload);
 		} else {
-			this.hero.id = this.heroId;
-			saveObservable = this.heroService.update(this.hero);
+			payload.id = this.heroId;
+			saveObservable = this.heroService.update(payload);
 		}
 		this.saveSubscription = saveObservable.subscribe(_ => {
 			this.navigateBack();

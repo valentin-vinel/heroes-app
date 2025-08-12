@@ -30,9 +30,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-
     width: 400px;
-    /* padding: 1rem; */
     margin: 2rem auto;
     text-align: center;
     gap: 1rem;
@@ -108,4 +106,39 @@
     font-weight: 900;
     text-transform: uppercase;
     font-size: 56px;
+}
+
+@media (min-width: 1024px) {
+    .container {
+        flex-direction: row;
+        padding: 0 3rem;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .card {
+        width: 100%;
+        height: 600px;
+        flex-wrap: wrap;
+        max-width: 800px;
+        overflow: hidden;
+    }
+    .hp_preview {
+        grid-column: 1/2;
+        grid-row: 1/4;
+        width: 150px;
+        height: 600px;
+        transition: width 0.4s ease-in-out;
+    }
+    .hp_preview:hover {
+        height: 600px;
+        width: 400px;
+    }
+    .hp_preview > img {
+        height: 600px;
+    }
+
+    .gradient-text {
+        font-size: 80px;
+    }
 }

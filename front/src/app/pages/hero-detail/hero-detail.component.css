@@ -32,11 +32,16 @@
     position: absolute;
     top: 80px;
     padding: 1rem;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 .hero_img_png{
   max-height: 350px;
-  margin: auto;
+  transition: height 0.4s ease-in-out;
 }
 
 .hero_description {
@@ -45,6 +50,61 @@
   font-weight: bold;
   margin-top: 3rem;
 }
+
+.btn_container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  position: absolute;
+  bottom: 100px;
+}
+.btn_container > button {
+  background: none;
+  color: white;
+  text-transform: uppercase;
+  border: 2px solid rgb(104, 104, 104);
+  padding: 10px;
+}
+.btn_container > button:hover {
+  color: white;
+  border: 3px solid white;
+  font-weight: 700;
+}
+
+.modal-backdrop {
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(0,0,0,0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 100;
+}
+
+.modal {
+  background: black;
+  color: white;
+  border: 1px solid white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  padding: 1.5rem;
+  border-radius: 1rem;
+  max-width: 400px;
+}
+.modal_btn > button {
+  margin: 1rem;
+  width: 100px;
+}
+.modal_btn > button:hover {
+  background: rgb(100, 148, 211);
+  color: white;
+  font-weight: 600;
+} 
 
 @media (min-width: 768px) {
   .hero_name {
@@ -63,12 +123,10 @@
 
   .img_desc {
       top: 140px;
-      display: flex;
-      align-items: center;
+      flex-direction: row;
   }
 
   .hero_img_png{
-    width: 50%;
     max-height: 700px;
   }
 

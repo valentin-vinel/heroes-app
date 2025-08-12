@@ -39,6 +39,10 @@ export class HeroService {
 		);
 	}
 
+  delete(id: number): Observable<void> {
+		return this.http.delete<void>(this.BASE_URL + 'heroes/' + id);
+	}
+
   private log(response: any) {
     console.table(response);
   }

@@ -4,7 +4,14 @@
       <!-- <h1 class="title gradient-text">HEROES</h1> -->
       @for (hero of heroList(); track $index) {
         <div class="card" (click)="goToHeroDetail(hero)">
-            <img class="hero_img" [src]="'assets/public/' + hero.profile_img"  alt="Image du héro">
+            <img 
+              class="hero_img"
+              [src]="hero.profile_img 
+                    ? (hero.profile_img.startsWith('http') 
+                          ? hero.profile_img 
+                          : 'assets/public/' + hero.profile_img) 
+                    : 'assets/default.jpg'"
+              alt="Image du héros">
         </div>
       }
       <button class="btn-add" (click)="goToAddHeroForm()">

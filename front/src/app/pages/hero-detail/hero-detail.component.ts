@@ -26,6 +26,7 @@ export class HeroDetailComponent implements OnInit {
   private route = inject(ActivatedRoute);
   private router = inject(Router);
   private heroService = inject(HeroService)
+  showDeleteModal = false;
 
   ngOnInit() {
     const heroId: string | null = this.route.snapshot.paramMap.get('id');
@@ -39,6 +40,22 @@ export class HeroDetailComponent implements OnInit {
 
   goToHeroList() {
     this.router.navigate(['/'])
+  }
+
+  goToDeleteModal() {
+    this.showDeleteModal = true;
+  }
+  closeModal() {
+    this.showDeleteModal = false;
+  }
+  confirmDelete() {
+    if (this.hero.id !== undefined) {
+    this.heroService.delete(this.hero.id).subscribe(() => {
+      console.log('Suppression confirmée');
+      this.closeModal();
+      this.goToHeroList();
+    });
+  }
   }
 
 }

@@ -4,4 +4,22 @@
     <img class="hero_img_png" [src]="hero.png_img" alt="Image png du héro">
     <p class="hero_description">{{hero.description}}</p>
   </div>
+  <div class="btn_container">
+    <button>Modifier le héro</button>
+    <button (click)="goToDeleteModal()">Supprimer le héro</button>
+  </div>
 </div>
+
+<!-- Modal suppression -->
+@if (showDeleteModal) {
+  <div class="modal-backdrop">
+    <div class="modal">
+      <h3>Confirmez la suppression</h3>
+      <p>Êtes-vous sûr de vouloir supprimer cet élément ?</p>
+      <div class="modal_btn">
+        <button (click)="confirmDelete()">Confirmer</button>
+        <button (click)="closeModal()">Annuler</button>
+      </div>
+    </div>
+  </div>
+}
