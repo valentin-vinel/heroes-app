@@ -21,4 +21,8 @@ export class HeaderComponent {
     this.router.navigate(['add-hero'])
   }
 
+  goToLoginForm() {
+    this.router.navigate(['login'])
+  }
+
 }

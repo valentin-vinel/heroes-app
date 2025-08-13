@@ -115,6 +115,9 @@
         justify-content: center;
         align-items: center;
     }
+    .visu {
+        width: 900px;
+    }
 
     .card {
         width: 100%;

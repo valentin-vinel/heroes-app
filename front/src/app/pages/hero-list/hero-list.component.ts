@@ -1,6 +1,6 @@
 import { Component, inject, OnInit } from '@angular/core';
 // import { HEROES } from '../../heroes/mock-heroes-list';
-import { Hero } from '../../heroes/hero';
+import { Hero } from '../../models/hero.model';
 import { Router } from '@angular/router';
 import { HeroService } from '../../services/hero.service';
 import { toSignal } from '@angular/core/rxjs-interop';
