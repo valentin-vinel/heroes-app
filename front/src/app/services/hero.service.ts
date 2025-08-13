@@ -13,29 +13,29 @@ export class HeroService {
 
   getHeroes(): Observable<Hero[]> {
     return this.http.get<Hero[]>(this.BASE_URL + 'heroes').pipe(
-      tap((response) => this.log(response)),
-      catchError((error) => this.handleError(error, null))
+      tap((response: Hero[]) => this.log(response)),
+      catchError((error: Error) => this.handleError(error, null))
     )
   }
 
   getHeroById(id: number): Observable<Hero> {
     return this.http.get<Hero>(this.BASE_URL + 'heroes/' + id).pipe(
-      tap((response) => this.log(response)),
-      catchError((error) => this.handleError(error, null))
+      tap((response: Hero) => this.log(response)),
+      catchError((error: Error) => this.handleError(error, null))
     )
   }
 
   add(hero: Hero): Observable<Hero> {
 		return this.http.post<Hero>(this.BASE_URL + 'heroes', hero).pipe(
-			tap((response) => this.log(response)),
-      catchError((error) => this.handleError(error, null))
+			tap((response: Hero) => this.log(response)),
+      catchError((error: Error) => this.handleError(error, null))
 		);
 	}
 
   update(hero: Hero): Observable<Hero> {
 		return this.http.put<Hero>(this.BASE_URL + 'heroes/' + hero.id, hero).pipe(
-			tap((response) => this.log(response)),
-      catchError((error) => this.handleError(error, null))
+			tap((response: Hero) => this.log(response)),
+      catchError((error: Error) => this.handleError(error, null))
 		);
 	}
 

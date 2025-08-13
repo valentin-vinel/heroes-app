@@ -19,7 +19,7 @@ export class HeroListComponent {
   private router = inject(Router);
   private heroService = inject(HeroService);
   
-  heroList = toSignal(this.heroService.getHeroes());
+  heroList = toSignal<Hero[]>(this.heroService.getHeroes());
 
   goToHeroDetail(hero: Hero) {
     console.log('allo', this.heroList)

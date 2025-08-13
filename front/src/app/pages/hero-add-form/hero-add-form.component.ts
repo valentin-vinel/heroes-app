@@ -2,7 +2,7 @@ import { Component, inject, OnDestroy, OnInit } from '@angular/core';
 import { Hero } from '../../models/hero.model';
 import { FormBuilder, ReactiveFormsModule, Validators } from '@angular/forms';
 import { Subscription } from 'rxjs';
-import { ActivatedRoute, Router } from '@angular/router';
+import { ActivatedRoute, Params, Router } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { HeroService } from '../../services/hero.service';
 
@@ -52,8 +52,6 @@ export class HeroAddFormComponent implements OnInit, OnDestroy {
   heroId = -1
 
   ngOnInit(): void {
-    console.log('Hello add form')
-
     this.formValuesSubscription = this.formGroup.valueChanges.subscribe(data => {
 			this.hero = Object.assign(new Hero(), data);
 		});
@@ -93,7 +91,7 @@ export class HeroAddFormComponent implements OnInit, OnDestroy {
 
   isFieldValid(fieldName: string) {
     const formControl = this.formGroup.get(fieldName);
-   return formControl?.invalid && ( formControl?.dirty || formControl?.touched );
+    return formControl?.invalid && ( formControl?.dirty || formControl?.touched );
   }
 
   navigateBack() {

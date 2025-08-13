@@ -20,6 +20,7 @@ export class LoginService {
 
   login(credentials: Credentials): Observable<User | null | undefined> {
     return this.http.post(this.BASE_URL + 'login', credentials).pipe(
+      tap(() => console.log("login allo")),
       tap((result: any) => {
         localStorage.setItem('token', result['token']);
         const user = Object.assign(new User(), result['user']);
