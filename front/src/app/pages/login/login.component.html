@@ -3,9 +3,9 @@
     <h2>Connexion</h2>
     <form class="login_form" (submit)="login()" [formGroup]="loginFormGroup">
         <label for="email">Email</label>
-        <input type="email" name="email">
+        <input type="email" name="email" formControlName="email" />
         <label for="password">Mot de passe</label>
-        <input type="password" name="password">
+        <input type="password" name="password" formControlName="password" />
         <button type="submit" class="login_form-btn">
             Se connecter
         </button>

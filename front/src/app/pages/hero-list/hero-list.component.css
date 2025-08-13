@@ -86,9 +86,10 @@
         flex-direction: row;
         top: 100px;
         padding: 0 2rem;
-        padding-bottom: 0px;
-        overflow-x: visible;
-        scroll-padding-left: 0;
+        padding: 0px;
+        overflow-x: scroll;
+        max-width: 100%;
+        justify-content: space-between;
     }
 
     .card {
@@ -97,6 +98,7 @@
         transition: none;
         transition: width 0.4s ease-in-out;
         flex: 0 0 auto; 
+        transform-origin: left center;
     }
     .card:hover {
         height: 600px;
@@ -106,6 +108,7 @@
     .hero_img {
         height: 600px;
         bottom: 0;
+        left: 0;
     }
 
     .btn-add {

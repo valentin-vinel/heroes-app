@@ -28,7 +28,6 @@ export class LoginComponent implements OnDestroy {
   invalidCredentials = false
 
   login() {
-    console.log('bonjour')
     this.loginSubscription = this.loginService.login(
       this.loginFormGroup.value as Credentials
     ).subscribe({
