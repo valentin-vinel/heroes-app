@@ -1,4 +1,5 @@
 import * as appUserController from "../controllers/appUserController.js"
+import * as homepageController from "../controllers/homepageController.js"
 import * as heroController from "../controllers/heroController.js"
 import * as authController from "../controllers/authController.js"
 import { isLogged } from "../middlewares/permissionMiddleware.js"
@@ -8,6 +9,9 @@ export const router = Router();
 
 router.get('/users', appUserController.getAll)
 router.get('/users/:id', appUserController.getOne)
+
+router.get('/homepage/first', homepageController.getFirstHeroes)
+router.get('/homepage/last', homepageController.getLastHeroes)
 
 router.get('/heroes', heroController.getAll)
 router.get('/heroes/:id', heroController.getOne)

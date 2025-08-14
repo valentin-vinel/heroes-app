@@ -1,0 +1,11 @@
+###
+# GET first heroes for homepage
+GET http://localhost:5000/homepage/first
+Content-Type: application/json
+###
+
+###
+# GET last heroes for homepage
+GET http://localhost:5000/homepage/last
+Content-Type: application/json
+###

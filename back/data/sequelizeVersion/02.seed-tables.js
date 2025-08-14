@@ -47,17 +47,6 @@ const heroes = [
         id_app_user: 1
     },
     { 
-        hero_name: 'Spiderman', 
-        firstname: "Peter", 
-        lastname: "Parker", 
-        profile_img: "spiderhp.jpg",
-        png_img: "https://pngimg.com/uploads/spider_man/spider_man_PNG8.png",
-        description: "Spider-Man, alias Peter Parker, est un adolescent ordinaire qui gagne des super-pouvoirs après avoir été mordu par une araignée radioactive. Agile et doté d’un sens d’araignée lui permettant de détecter le danger, il utilise ses capacités et son intelligence pour protéger New York, tout en jonglant avec sa vie de lycéen. Son mantra : « Un grand pouvoir implique de grandes responsabilités.»",
-        bg_gradient: "linear-gradient(to right, #0D1E40, #301E35, #9E2223)",
-        name_color: "linear-gradient(to right, #D33028, #067CC1)",
-        id_app_user: 1
-    },
-    { 
         hero_name: 'Captain America', 
         firstname: "Steve", 
         lastname: "Rogers", 
@@ -66,17 +55,6 @@ const heroes = [
         description: "Captain America, alias Steve Rogers, est un super-soldat créé durant la Seconde Guerre mondiale grâce à un sérum spécial. Doté d’une force, d’une agilité et d’une endurance surhumaines, il manie un bouclier indestructible qu’il utilise pour défendre la justice et la liberté. Symbole de courage et de patriotisme, il est un leader emblématique des Avengers.»",
         bg_gradient: "linear-gradient(to right, #245887, #811F1F, #8E9095)",
         name_color: "linear-gradient(to right, #D33028, #FFFFFF, #067CC1)",
-        id_app_user: 1
-    },
-    { 
-        hero_name: 'Black Panther', 
-        firstname: "T", 
-        lastname: "'Challa", 
-        profile_img: "bphp.jpg",
-        png_img: "https://xtech-frontend.s3.amazonaws.com/media/img/personaje-pantera-dk.png",
-        description: "Black Panther, alias T’Challa, est le roi du Wakanda, une nation africaine technologiquement avancée et secrète. Doté d’une force, d’une vitesse et de réflexes surhumains grâce à une plante en forme de cœur, il porte un costume en vibranium ultra-résistant. En plus d’être un guerrier redoutable, il est un leader sage qui protège son peuple et lutte pour la justice mondiale.",
-        bg_gradient: "linear-gradient(to right, #898989, #4A4576, #060E17)",
-        name_color: "linear-gradient(to right, #4A4576, #060E17, #898989)",
         id_app_user: 1
     },
     { 
@@ -99,6 +77,28 @@ const heroes = [
         description: "Thor est le dieu du tonnerre de l’univers Marvel, inspiré de la mythologie nordique. Fils d’Odin et prince d’Asgard, il manie le marteau enchanté Mjolnir, qui lui confère la maîtrise de la foudre, la capacité de voler et une force surhumaine. Membre des Avengers, il protège à la fois la Terre et les Neuf Royaumes.",
         bg_gradient: "linear-gradient(to right, #6C6D6D, #313232, #64151D)",
         name_color: "linear-gradient(to right, #64151D, #6C6D6D)",
+        id_app_user: 1
+    },
+    { 
+        hero_name: 'Spiderman', 
+        firstname: "Peter", 
+        lastname: "Parker", 
+        profile_img: "spiderhp.jpg",
+        png_img: "https://pngimg.com/uploads/spider_man/spider_man_PNG8.png",
+        description: "Spider-Man, alias Peter Parker, est un adolescent ordinaire qui gagne des super-pouvoirs après avoir été mordu par une araignée radioactive. Agile et doté d’un sens d’araignée lui permettant de détecter le danger, il utilise ses capacités et son intelligence pour protéger New York, tout en jonglant avec sa vie de lycéen. Son mantra : « Un grand pouvoir implique de grandes responsabilités.»",
+        bg_gradient: "linear-gradient(to right, #0D1E40, #301E35, #9E2223)",
+        name_color: "linear-gradient(to right, #D33028, #067CC1)",
+        id_app_user: 1
+    },
+    { 
+        hero_name: 'Black Panther', 
+        firstname: "T", 
+        lastname: "'Challa", 
+        profile_img: "bphp.jpg",
+        png_img: "https://xtech-frontend.s3.amazonaws.com/media/img/personaje-pantera-dk.png",
+        description: "Black Panther, alias T’Challa, est le roi du Wakanda, une nation africaine technologiquement avancée et secrète. Doté d’une force, d’une vitesse et de réflexes surhumains grâce à une plante en forme de cœur, il porte un costume en vibranium ultra-résistant. En plus d’être un guerrier redoutable, il est un leader sage qui protège son peuple et lutte pour la justice mondiale.",
+        bg_gradient: "linear-gradient(to right, #898989, #4A4576, #060E17)",
+        name_color: "linear-gradient(to right, #4A4576, #060E17, #898989)",
         id_app_user: 1
     },
     { 

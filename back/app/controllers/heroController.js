@@ -1,11 +1,12 @@
 import { Hero } from "../models/associations.js";
 import { idSchema, heroSchema, updateHeroSchema } from "../schemas/index.js";
-// import bcrypt from "bcrypt";
 
 // Get all heroes
 export const getAll = async (req, res) => {
   try {
-    const heroes = await Hero.findAll();
+    const heroes = await Hero.findAll({
+      order: [['created_at', 'ASC']]
+    });
     
     res.json(heroes)
   } catch (error) {
