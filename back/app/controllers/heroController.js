@@ -5,7 +5,8 @@ import { idSchema, heroSchema, updateHeroSchema } from "../schemas/index.js";
 export const getAll = async (req, res) => {
   try {
     const heroes = await Hero.findAll({
-      order: [['created_at', 'ASC']]
+      order: [['created_at', 'ASC']],
+      attributes: ['id', 'hero_name', 'profile_img', 'id_app_user', 'created_at']
     });
     
     res.json(heroes)

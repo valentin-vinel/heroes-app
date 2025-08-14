@@ -19,20 +19,11 @@
         <h2 class="lasts-heroes_title">DERNIERS AJOUTS</h2>
         <div class="lasts-heroes_list">
             @for (hero of lastsHeroes(); track $index) {
-                <div class="lasts-heroes_card" (click)="goToHeroDetail(hero)">
-                    <img 
-                        class="lasts-heroes_img"
-                        [src]="hero.profile_img 
-                            ? (hero.profile_img.startsWith('http') 
-                                    ? hero.profile_img 
-                                    : 'assets/public/' + hero.profile_img) 
-                            : 'assets/default.jpg'"
-                        alt="Image du héros">
-                    <div class="lasts-heroes_content">
-                        <h3>{{hero.hero_name}}</h3>
-                        <p>by &#64;{{hero.appUser?.username}}</p>
-                    </div>
-                </div>
+                <app-hero-card 
+                    [hero]="hero" 
+                    class="homepage-card"
+                    (click)="goToHeroDetail(hero)" 
+                />
             }
         </div>
         <button class="btn-view-more">

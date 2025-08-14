@@ -1,0 +1,14 @@
+<div class="card">
+    <img 
+        class="hero_img"
+        [src]="hero.profile_img 
+            ? (hero.profile_img.startsWith('http') 
+                ? hero.profile_img 
+                : 'assets/public/' + hero.profile_img) 
+            : 'assets/default.jpg'"
+        alt="Image du héros">
+    <div class="card-text">
+        <h3>{{hero.hero_name}}</h3>
+        <p>by &#64;{{hero.appUser?.username}}</p>
+    </div>
+</div>

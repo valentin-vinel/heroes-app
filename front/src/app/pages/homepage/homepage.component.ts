@@ -5,11 +5,12 @@ import { Hero } from '../../models/hero.model';
 import { HomepageService } from '../../services/homepage.service';
 import { HttpClientModule } from '@angular/common/http';
 import { CommonModule } from '@angular/common';
+import { HeroCardComponent } from "../../shared/hero-card/hero-card.component";
 
 @Component({
   selector: 'app-homepage',
   standalone: true,
-  imports: [CommonModule, HttpClientModule],
+  imports: [CommonModule, HttpClientModule, HeroCardComponent],
   templateUrl: './homepage.component.html',
   styleUrl: './homepage.component.css'
 })
@@ -25,7 +26,4 @@ export class HomepageComponent {
     this.router.navigate(['/hero', hero.id])
   }
 
-  // goToAddHeroForm() {
-  //   this.router.navigate(['/add-hero'])
-  // }
 }

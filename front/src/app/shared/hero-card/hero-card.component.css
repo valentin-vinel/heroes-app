@@ -1,0 +1,79 @@
+/* HOMEPAGE CSS */
+:host.homepage-card {
+    position: relative;
+    border-radius: 1rem;
+    width: 120px;
+    height: 120px;
+}
+:host.homepage-card .hero_img {
+    filter: brightness(40%);
+    border-radius: 1rem;
+    object-fit: cover;
+}
+:host.homepage-card .card-text {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    color: white;
+    text-align: center;
+    top: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 10px;
+    border-radius: 1rem;
+}
+
+/* LIST PAGE CSS */
+:host.list-page-card {
+    width: 150px;
+    height: 150px;
+    /* overflow: hidden; */
+    border-radius: 1rem;
+    transition: height 0.4s ease-in-out;
+}
+
+:host.list-page-card .hero_img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  bottom: 40px;
+  border-radius: 1rem;
+}
+
+@media (min-width: 1024px) {
+
+    /* HOMEPAGE CSS */
+    :host.homepage-card {
+        height: 150px;
+        width: 150px;
+        transition: width 0.2s ease-in-out;
+    }
+    :host.homepage-card:hover {
+        width: 160px;
+        cursor: pointer;
+    }
+
+    :host.list-page-card {
+        height: 200px;
+        width: 200px;
+        position: relative;
+    }
+
+    :host.list-page-card .card-text {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        background: rgba(0,0,0,0.6); /* fond sombre semi-transparent */
+        color: white;
+        padding: 10px;
+        opacity: 1;          /* invisible par défaut */
+        transition: opacity 0.3s ease;
+    }
+
+    :host.list-page-card:hover {
+        opacity: 1;
+    }
+
+}

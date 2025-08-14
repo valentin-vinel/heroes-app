@@ -13,7 +13,6 @@ import { FooterComponent } from "./shared/footer/footer.component";
 })
 export class AppComponent {
 
-  private heroService = inject(HeroService);
   private router = inject(Router);
 
   goToAddHeroForm() {
