@@ -15,7 +15,7 @@ router.get('/homepage/last', homepageController.getLastHeroes)
 
 router.get('/heroes', heroController.getAll)
 router.get('/heroes/:id', heroController.getOne)
-router.post('/heroes', isLogged, heroController.createOne)
+router.post('/heroes', heroController.createOne)
 router.patch('/heroes/:id', isLogged, heroController.updateOneById)
 router.delete('/heroes/:id', isLogged, heroController.deleteOneById)
 
