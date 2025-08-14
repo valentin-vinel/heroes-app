@@ -6,6 +6,7 @@ import { HeroAddFormComponent } from './pages/hero-add-form/hero-add-form.compon
 import { LoginComponent } from './pages/login/login.component';
 import { isLoggedInGuard } from './guards/is-logged-in.guard';
 import { HomepageComponent } from './pages/homepage/homepage.component';
+import { RegisterComponent } from './pages/register/register.component';
 
 export const routes: Routes = [{
     path: '',
@@ -14,7 +15,8 @@ export const routes: Routes = [{
         { path: '', component: HomepageComponent},
         { path: 'heroes', component: HeroListComponent},
         { path: 'hero/:id', component: HeroDetailComponent},
-        { path: 'add-hero', component: HeroAddFormComponent},
-        { path: 'login', component: LoginComponent}
+        { path: 'add-hero', component: HeroAddFormComponent, canActivate: [isLoggedInGuard]},
+        { path: 'login', component: LoginComponent},
+        { path: 'register', component: RegisterComponent},
     ]
 }];

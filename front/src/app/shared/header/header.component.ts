@@ -1,7 +1,7 @@
 import { Component, inject, OnDestroy } from '@angular/core';
 import { Router } from '@angular/router';
 import { Subscription } from 'rxjs';
-import { LoginService } from '../../services/login.service';
+import { AuthService } from '../../services/auth.service';
 
 @Component({
   selector: 'app-header',
@@ -14,7 +14,7 @@ export class HeaderComponent implements OnDestroy {
 
   isMenuOpen = false;
   private router = inject(Router);
-  loginService = inject(LoginService)
+  authService = inject(AuthService)
 
   private logoutSubscription: Subscription | null = null
 
@@ -23,7 +23,7 @@ export class HeaderComponent implements OnDestroy {
   }
 
   logout() {
-    this.logoutSubscription = this.loginService.logout().subscribe({
+    this.logoutSubscription = this.authService.logout().subscribe({
       next: _ => {
         this.router.navigate(['login']);
       },

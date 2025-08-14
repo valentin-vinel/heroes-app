@@ -1,35 +1,36 @@
-import { Component, inject, OnDestroy } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { FormBuilder, ReactiveFormsModule, Validators } from '@angular/forms';
-import { AuthService, LoginCredentials } from '../../services/auth.service';
 import { Router } from '@angular/router';
 import { Subscription } from 'rxjs';
+import { AuthService, RegisterCredentials } from '../../services/auth.service';
 import { User } from '../../models/user.model';
 
 @Component({
-  selector: 'app-login',
+  selector: 'app-register',
   standalone: true,
   imports: [ReactiveFormsModule],
-  templateUrl: './login.component.html',
-  styleUrl: './login.component.css'
+  templateUrl: './register.component.html',
+  styleUrl: './register.component.css'
 })
-export class LoginComponent implements OnDestroy {
+export class RegisterComponent {
 
-  private formBuilder = inject(FormBuilder);
+ private formBuilder = inject(FormBuilder);
   private authService = inject(AuthService);
   private router = inject(Router);
 
-  private loginSubscription: Subscription | null = null;
+  private registerSubscription: Subscription | null = null;
 
-  loginFormGroup = this.formBuilder.group({
+  registerFormGroup = this.formBuilder.group({
+    'username': ['', [Validators.required]],
     'email': ['', [Validators.required]],
     'password': ['', [Validators.required]]
   })
 
   invalidCredentials = false
 
-  login() {
-    this.loginSubscription = this.authService.login(
-      this.loginFormGroup.value as LoginCredentials
+  register() {
+    this.registerSubscription = this.authService.register(
+      this.registerFormGroup.value as RegisterCredentials
     ).subscribe({
       next: (result: User | null | undefined) => {
         this.router.navigate(['/'])
@@ -41,12 +42,12 @@ export class LoginComponent implements OnDestroy {
     })
   }
 
-  goToRegisterForm() {
-    this.router.navigate(['register'])
-  }
+  // goToRegisterForm() {
+  //   this.router.navigate(['/'])
+  // }
 
   ngOnDestroy(): void {
-    this.loginSubscription?.unsubscribe();
+    this.registerSubscription?.unsubscribe();
   }
 
 }

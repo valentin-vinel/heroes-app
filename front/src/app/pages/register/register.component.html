@@ -1,0 +1,15 @@
+<div class="background"></div>
+<div class="login_card">
+    <h2>Inscription</h2>
+    <form class="login_form" (submit)="register()" [formGroup]="registerFormGroup">
+        <label for="username">Username</label>
+        <input type="text" name="username" formControlName="username" />
+        <label for="email">Email</label>
+        <input type="email" name="email" formControlName="email" />
+        <label for="password">Mot de passe</label>
+        <input type="password" name="password" formControlName="password" />
+        <button type="submit" class="login_form-btn">
+            S'inscrire
+        </button>
+    </form>
+</div>

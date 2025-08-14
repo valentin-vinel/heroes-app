@@ -1,15 +1,15 @@
 import { inject } from '@angular/core';
 import { CanActivateFn, Router } from '@angular/router';
-import { LoginService } from '../services/login.service';
+import { AuthService } from '../services/auth.service';
 import { catchError, map } from 'rxjs';
 
 export const isLoggedInGuard: CanActivateFn = (route, state) => {
 
-  const loginService = inject(LoginService);
+  const authService = inject(AuthService);
   const router = inject(Router);
 
-  if(loginService.user() === undefined) {
-    return loginService.getUsers().pipe(
+  if(authService.user() === undefined) {
+    return authService.getUsers().pipe(
       map(_ => {
         return true;
       }),
@@ -17,7 +17,7 @@ export const isLoggedInGuard: CanActivateFn = (route, state) => {
     )
   }
 
-  if(loginService.user() === null) {
+  if(authService.user() === null) {
     router.navigate(['login']);
   }
 

@@ -3,23 +3,39 @@ import { inject, Injectable, signal } from '@angular/core';
 import { User } from '../models/user.model';
 import { map, Observable, tap } from 'rxjs';
 
-export interface Credentials {
+export interface LoginCredentials {
   email: string;
   password: string;
+}
+export interface RegisterCredentials extends LoginCredentials {
+  username: string;
 }
 
 @Injectable({
   providedIn: 'root'
 })
-export class LoginService {
+export class AuthService {
 
   private http = inject(HttpClient);
   private BASE_URL = 'https://heroes-app-api.onrender.com/'
 
   user = signal<User | null | undefined>(undefined)
 
-  login(credentials: Credentials): Observable<User | null | undefined> {
+  login(credentials: LoginCredentials): Observable<User | null | undefined> {
     return this.http.post(this.BASE_URL + 'login', credentials).pipe(
+      tap((result: any) => {
+        localStorage.setItem('token', result['token']);
+        const user = Object.assign(new User(), result['user']);
+        this.user.set(user)
+      }),
+      map((result: any) => {
+        return this.user()
+      })
+    )
+  }
+
+  register(credentials: RegisterCredentials): Observable<User | null | undefined> {
+    return this.http.post(this.BASE_URL + 'register', credentials).pipe(
       tap((result: any) => {
         localStorage.setItem('token', result['token']);
         const user = Object.assign(new User(), result['user']);

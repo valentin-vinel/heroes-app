@@ -40,25 +40,9 @@
     cursor: pointer;
 }
 
-.link_register {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    text-align: center;
-    gap: 8px;
-    font-size: 14px;
-}
-.link_register a {
-    text-decoration: underline;
-    cursor: pointer;
-}
 
 @media (min-width: 1024px) {
     .login_form {
         width: 400px;
-    }
-
-    .link_register {
-        flex-direction: row;
     }
 }
