@@ -26,4 +26,8 @@ export class HomepageComponent {
     this.router.navigate(['/hero', hero.id])
   }
 
+  goToHeroList() {
+    this.router.navigate(['heroes'])
+  }
+
 }

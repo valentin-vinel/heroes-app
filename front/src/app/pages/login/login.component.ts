@@ -41,6 +41,10 @@ export class LoginComponent implements OnDestroy {
     })
   }
 
+  goToRegisterForm() {
+    this.router.navigate(['/'])
+  }
+
   ngOnDestroy(): void {
     this.loginSubscription?.unsubscribe();
   }

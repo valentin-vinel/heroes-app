@@ -146,11 +146,6 @@
         width: 150px;
         cursor: pointer;
     }
-    /* .lasts-heroes_img {
-        width: 140px;
-        height: 140px;
-        object-fit: cover;
-    } */
     .lasts-heroes_list {
         display: flex;
     }

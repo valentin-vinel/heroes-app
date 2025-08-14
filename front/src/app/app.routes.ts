@@ -14,7 +14,7 @@ export const routes: Routes = [{
         { path: '', component: HomepageComponent},
         { path: 'heroes', component: HeroListComponent},
         { path: 'hero/:id', component: HeroDetailComponent},
-        { path: 'add-hero', component: HeroAddFormComponent, canActivate: [isLoggedInGuard]},
+        { path: 'add-hero', component: HeroAddFormComponent},
         { path: 'login', component: LoginComponent}
     ]
 }];

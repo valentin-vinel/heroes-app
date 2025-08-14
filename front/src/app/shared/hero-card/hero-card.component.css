@@ -31,6 +31,7 @@
     /* overflow: hidden; */
     border-radius: 1rem;
     transition: height 0.4s ease-in-out;
+    position: relative;
 }
 
 :host.list-page-card .hero_img {
@@ -39,6 +40,25 @@
   object-fit: cover;
   bottom: 40px;
   border-radius: 1rem;
+}
+
+:host.list-page-card .card-text {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: rgba(0,0,0,0.6); /* fond sombre semi-transparent */
+    color: white;
+    padding: 10px;
+    opacity: 1;          /* invisible par défaut */
+    transition: opacity 0.3s ease;
+    border-radius: 0 0 1rem 1rem;
+}
+:host.list-page-card .card-text h3 {
+    font-size: 16px;
+}
+:host.list-page-card .card-text p {
+    font-size: 12px;
 }
 
 @media (min-width: 1024px) {
@@ -54,26 +74,29 @@
         cursor: pointer;
     }
 
+    /* LIST PAGE CSS */
     :host.list-page-card {
         height: 200px;
         width: 200px;
-        position: relative;
+    }
+    :host.list-page-card:hover {
+        cursor: pointer;
     }
 
     :host.list-page-card .card-text {
-        position: absolute;
-        bottom: 0;
-        left: 0;
-        width: 100%;
-        background: rgba(0,0,0,0.6); /* fond sombre semi-transparent */
-        color: white;
-        padding: 10px;
-        opacity: 1;          /* invisible par défaut */
-        transition: opacity 0.3s ease;
+        opacity: 0.2;
+        /* height: 40%; */
+    }
+    :host.list-page-card .card-text h3 {
+        font-size: 20px;
+    }
+    :host.list-page-card .card-text p {
+        font-size: 14px;
     }
 
-    :host.list-page-card:hover {
+    :host.list-page-card:hover .card-text {
         opacity: 1;
+        cursor: pointer;
     }
 
 }

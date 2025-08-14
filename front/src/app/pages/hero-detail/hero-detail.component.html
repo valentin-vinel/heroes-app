@@ -1,11 +1,13 @@
-<div class="main" [style.background]="hero.bg_gradient">
+<div class="background" [style.background]="hero.bg_gradient"></div>
+
+<div class="main">
   <h1 class="hero_name gradient-text" [style.--heroGradient]="hero.name_color">{{hero.hero_name}}</h1>
   <div class="img_desc">
     <img class="hero_img_png" [src]="hero.png_img" alt="Image png du héro">
     <p class="hero_description">{{hero.description}}</p>
   </div>
   <div class="btn_container">
-    <button>Modifier le héro</button>
+    <!-- <button>Modifier le héro</button> -->
     <button (click)="goToDeleteModal()">Supprimer le héro</button>
   </div>
 </div>

@@ -12,6 +12,7 @@
     </button>
 
     <div class="navbar_link" [class.open]="isMenuOpen">
+      <a href="/">ACCUEIL</a>
       <a (click)="goToHeroesList()">HEROES</a>
       <a (click)="goToAddForm()">AJOUTER MON HERO</a>
       @if (loginService.user()) {
