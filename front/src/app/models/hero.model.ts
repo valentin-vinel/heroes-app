@@ -1,3 +1,5 @@
+import { User } from "./user.model";
+
 export class Hero {
     id?: number;
     hero_name: string;
@@ -8,6 +10,7 @@ export class Hero {
     description: string;
     bg_gradient: string;
     name_color: string;
+    appUser?: User
 
     constructor(
         hero_name: string = 'Entrer un nom de héro',

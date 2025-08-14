@@ -6,12 +6,16 @@
     height: 100vh;
 }
 
-.main {
-    position: absolute;
-    top: 90px;
-    padding-bottom: 100px;
-    display: flex;
-    flex-direction: column;
+.container {
+    width: 100%;
+    height: 500px;
+}
+
+.heroes-list {
+    padding: 120px 0;
+    display: grid;
+    grid-template-columns: repeat(2, max-content);
+    justify-items: center;
     justify-content: center;
     align-items: center;
     gap: 1rem;
@@ -19,26 +23,27 @@
 
 .card {
     /* background-image: var(--heroProfileImg); */
-    position: relative;
-    width: 90%;
-    height: 100px;
-    overflow: hidden;
+    /* position: relative; */
+    width: 150px;
+    height: 150px;
+    /* overflow: hidden; */
     border-radius: 1rem;
     transition: height 0.4s ease-in-out;
 }
-.card:hover{
+/* .card:hover{
     height: 400px;
-}
+} */
 
 .hero_img {
   width: 100%;
-  height: auto;
+  height: 100%;
   object-fit: cover;
-  position: relative;
+  /* position: relative; */
   bottom: 40px;
+  border-radius: 1rem;
 }
 
-.btn-add {
+/* .btn-add {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -60,13 +65,7 @@
 .btn-add:hover {
     color: white;
     border: 2px solid white;
-}
-
-.title {
-    font-size: 70px;
-    text-align: center;
-    height: 80px;
-}
+} */
 
 .gradient-text {
   background: linear-gradient(to bottom, #FFFFFF, #3a3a3a);
@@ -77,44 +76,53 @@
 }
 
 @media (min-width: 1024px) {
-    .container {
+    .heroes-list {
         display: flex;
-        justify-content: center;
-    }
-
-    .main {
         flex-direction: row;
-        top: 100px;
-        padding: 0 2rem;
-        padding: 0px;
-        overflow-x: scroll;
-        max-width: 100%;
-        justify-content: space-between;
+        flex-wrap: wrap;
+        /* top: 100px; */
+        padding: 120px 80px;
+        /* padding: 0px; */
+        /* overflow-x: scroll; */
+        /* max-width: 100%; */
+        /* justify-content: space-between; */
     }
 
     .card {
-        height: 600px;
-        width: 150px;
-        transition: none;
-        transition: width 0.4s ease-in-out;
-        flex: 0 0 auto; 
-        transform-origin: left center;
-    }
-    .card:hover {
-        height: 600px;
-        width: 600px;
+        height: 200px;
+        width: 200px;
+        position: relative;
     }
 
-    .hero_img {
-        height: 600px;
+    .card-text {
+        position: absolute;
         bottom: 0;
         left: 0;
+        width: 100%;
+        background: rgba(0,0,0,0.6); /* fond sombre semi-transparent */
+        color: white;
+        padding: 10px;
+        opacity: 0;          /* invisible par défaut */
+        transition: opacity 0.3s ease;
     }
 
-    .btn-add {
+    /* au hover, on affiche le texte */
+    .card:hover .card-text {
+        opacity: 1;
+    }
+    /* .card:hover {
+        height: 600px;
+        width: 600px;
+    } */
+
+    /* .hero_img {
+        height: 200px;
+    } */
+
+    /* .btn-add {
         position: fixed;
         bottom: 90px;
         width: 500px;
         height: 80px;
-    }
+    } */
 }

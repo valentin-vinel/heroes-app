@@ -30,11 +30,4 @@ export class HeroListComponent {
     this.router.navigate(['/add-hero'])
   }
 
-  scroll(element) {
-    console.log(element);
-    element.scrollTo({
-      right: 500
-    })
-  }
-
 }

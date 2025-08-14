@@ -1,0 +1,157 @@
+.background {
+    background: linear-gradient(to bottom, #04172B, #4A1323);
+    position: fixed;
+    z-index: -1;
+    width: 100%;
+    height: 100vh;
+}
+
+.main {
+    position: absolute;
+    top: 90px;
+    padding-bottom: 150px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+}
+
+.card-list {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+.card {
+    position: relative;
+    width: 90%;
+    height: 100px;
+    overflow: hidden;
+    border-radius: 1rem;
+    transition: height 0.4s ease-in-out;
+}
+.card:hover{
+    height: 400px;
+}
+
+.hero_img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  position: relative;
+  bottom: 40px;
+}
+
+.lasts-heroes_title {
+    color: white;
+    margin-top: 1rem;
+}
+.lasts-heroes_list {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+}
+.lasts-heroes_card {
+    position: relative;
+    border-radius: 1rem;
+    width: 120px;
+    height: 120px;
+}
+.lasts-heroes_img {
+    filter: brightness(40%);
+    border-radius: 1rem;
+    object-fit: cover;
+}
+.lasts-heroes_content {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    color: white;
+    text-align: center;
+    top: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 10px;
+}
+.lasts-heroes_content h3 {
+    font-size: 16px;
+    text-transform: uppercase;
+}
+.lasts-heroes_content p {
+    font-size: 12px;
+    font-style: italic;
+}
+
+.btn-view-more {
+    background-color: rgb(97, 13, 13);
+    text-transform: uppercase;
+    color: white;
+    width: 200px;
+    height: 2rem;
+    margin: 1rem auto;
+    border-radius: 10px;
+}
+
+.gradient-text {
+  background: linear-gradient(to bottom, #FFFFFF, #3a3a3a);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  -webkit-text-fill-color: transparent;
+}
+
+@media (min-width: 1024px) {
+    .container {
+        display: flex;
+        justify-content: center;
+    }
+
+    .main {
+        top: 100px;
+        padding: 0 2rem;
+        padding: 0px;
+        max-width: 100%;
+        justify-content: space-between;
+    }
+
+    .card-list {
+        flex-direction: row;
+        gap: 1rem;
+    }
+    .card {
+        height: 450px;
+        width: 100px;
+        transition: none;
+        transition: width 0.6s ease-in-out;
+        flex: 0 0 auto; 
+    }
+    .card:hover {
+        height: 450px;
+        width: 450px;
+    }
+
+    .hero_img {
+        height: 450px;
+        bottom: 0;
+        left: 0;
+    }
+    .lasts-heroes_card{
+        width: 140px;
+        height: 140px;
+        transition: width 0.2s ease-in-out;
+    }
+    .lasts-heroes_card:hover {
+        width: 150px;
+        cursor: pointer;
+    }
+    /* .lasts-heroes_img {
+        width: 140px;
+        height: 140px;
+        object-fit: cover;
+    } */
+    .lasts-heroes_list {
+        display: flex;
+    }
+}

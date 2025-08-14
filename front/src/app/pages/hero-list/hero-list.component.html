@@ -1,7 +1,7 @@
 <div class="background"></div>
-  <div class="container">
-    <div #main class="main" >
-      <!-- <h1 class="title gradient-text">HEROES</h1> -->
+
+<div class="container">
+    <div class="heroes-list" >
       @for (hero of heroList(); track $index) {
         <div class="card" (click)="goToHeroDetail(hero)">
             <img 
@@ -12,11 +12,11 @@
                           : 'assets/public/' + hero.profile_img) 
                     : 'assets/default.jpg'"
               alt="Image du héros">
+            <div class="card-text">
+              <h3>{{hero.hero_name}}</h3>
+              <p>by &#64;{{hero.appUser?.username}}</p>
+            </div>
         </div>
       }
-      <button class="btn-add" (click)="goToAddHeroForm()">
-        <span>+</span>AJOUTER UN HERO
-      </button>
     </div>
-  </div>
-  
+</div>

@@ -1,0 +1,43 @@
+<div class="background"></div>
+
+<div class="container">
+    <div class="main">
+        <div class="card-list">
+            @for (hero of firstsHeroes(); track $index) {
+              <div class="card" (click)="goToHeroDetail(hero)">
+                  <img 
+                    class="hero_img"
+                    [src]="hero.profile_img 
+                          ? (hero.profile_img.startsWith('http') 
+                                ? hero.profile_img 
+                                : 'assets/public/' + hero.profile_img) 
+                          : 'assets/default.jpg'"
+                    alt="Image du héros">
+              </div>
+            }
+        </div>
+        <h2 class="lasts-heroes_title">DERNIERS AJOUTS</h2>
+        <div class="lasts-heroes_list">
+            @for (hero of lastsHeroes(); track $index) {
+                <div class="lasts-heroes_card" (click)="goToHeroDetail(hero)">
+                    <img 
+                        class="lasts-heroes_img"
+                        [src]="hero.profile_img 
+                            ? (hero.profile_img.startsWith('http') 
+                                    ? hero.profile_img 
+                                    : 'assets/public/' + hero.profile_img) 
+                            : 'assets/default.jpg'"
+                        alt="Image du héros">
+                    <div class="lasts-heroes_content">
+                        <h3>{{hero.hero_name}}</h3>
+                        <p>by &#64;{{hero.appUser?.username}}</p>
+                    </div>
+                </div>
+            }
+        </div>
+        <button class="btn-view-more">
+            Voir plus
+        </button>
+    </div>
+</div>
+  

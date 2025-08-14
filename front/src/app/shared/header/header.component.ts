@@ -33,6 +33,10 @@ export class HeaderComponent implements OnDestroy {
     })
   }
 
+  goToHeroesList() {
+    this.router.navigate(['heroes'])
+  }
+
   goToAddForm() {
     this.router.navigate(['add-hero'])
   }

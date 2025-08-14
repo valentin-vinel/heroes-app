@@ -66,14 +66,14 @@
     gap: 1rem;
 }
 
-.btn_back {
+/* .btn_back {
     background-color: rgb(168, 0, 0);
     text-transform: uppercase;
     color: white;
     width: 200px;
     height: 2rem;
     margin: auto;
-}
+} */
 
 .form-field {
     display: flex;
