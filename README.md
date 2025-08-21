@@ -113,8 +113,7 @@ firebase deploy
 1. Vérifier l’accès à l’API via Postman ou REST Client :
 
 - GET /heroes → liste des héros
-- POST /auth/login → authentification
-- DELETE /heroes/:id → suppression (admin uniquement)
+- POST /login → authentification
 
 2. Vérifier sur le front Angular :
 
