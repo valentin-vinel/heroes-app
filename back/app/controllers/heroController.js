@@ -6,7 +6,11 @@ export const getAll = async (req, res) => {
   try {
     const heroes = await Hero.findAll({
       order: [['created_at', 'ASC']],
-      attributes: ['id', 'hero_name', 'profile_img', 'id_app_user', 'created_at']
+      attributes: ['id', 'hero_name', 'profile_img', 'id_app_user', 'created_at'],
+      include: { 
+          association: "appUser", 
+          attributes: [ 'username' ] 
+      },
     });
     
     res.json(heroes)

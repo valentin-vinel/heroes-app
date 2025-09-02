@@ -38,6 +38,7 @@
 .navbar_link a:hover {
     color: #d30e0e;
     font-weight: 600;
+    cursor: pointer;
 }
 
 .navbar_link.open {
