@@ -1,0 +1,44 @@
+.loader-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+    height: 100vh;
+}
+    
+.spinner {
+    border: 6px solid #f3f3f3;
+    border-top: 6px solid #5f0b23;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    animation: spin 1s linear infinite;
+    font-size: 200px;
+    color: white;
+}
+    
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
+    
+.loader-container p {
+    margin: 1rem;
+    color: white;
+}
+
+
+@media (min-width: 1024px) {
+    .loader-container {
+      flex-direction: row;
+    }
+    
+    .spinner {
+      width: 60px;
+      height: 60px;
+    }
+    
+    .loader-container p {
+        margin: 2rem;
+    }
+}

@@ -1,19 +1,18 @@
 /* Mobile first */
 
+.background-null {
+  position: fixed;
+  z-index: -1;
+  width: 100%;
+  height: 100vh;
+  background: linear-gradient(to bottom, #04172B, #4A1323);
+}
+
 .background {
   position: fixed;
   z-index: -1;
   width: 100%;
   height: 100vh;
-}
-
-.main {
-    /* position: fixed;
-    top: 0;
-    right: 0; */
-    /* width: 100%;
-    height: 100vh; */
-    /* z-index: -1; */
 }
 
 .hero_name {

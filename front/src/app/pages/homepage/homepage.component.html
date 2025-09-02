@@ -1,34 +1,39 @@
 <div class="background"></div>
 
-<div class="container">
-    <div class="main">
-        <div class="card-list">
-            @for (hero of firstsHeroes(); track $index) {
-              <div class="card" (click)="goToHeroDetail(hero)">
-                  <img 
-                    class="hero_img"
-                    [src]="hero.profile_img 
-                          ? (hero.profile_img.startsWith('http') 
-                                ? hero.profile_img 
-                                : 'assets/public/' + hero.profile_img) 
-                          : 'assets/default.jpg'"
-                    alt="Image du héros">
-              </div>
-            }
+@if (!firstsHeroes() || !lastsHeroes()) {
+    <app-loading></app-loading>
+} @else {
+    <div class="container">
+        <div class="main">
+            <div class="card-list">
+                @for (hero of firstsHeroes(); track $index) {
+                  <div class="card" (click)="goToHeroDetail(hero)">
+                      <img 
+                        class="hero_img"
+                        [src]="hero.profile_img 
+                              ? (hero.profile_img.startsWith('http') 
+                                    ? hero.profile_img 
+                                    : 'assets/public/' + hero.profile_img) 
+                              : 'assets/default.jpg'"
+                        alt="Image du héros">
+                  </div>
+                }
+            </div>
+            <h2 class="lasts-heroes_title">DERNIERS AJOUTS</h2>
+            <div class="lasts-heroes_list">
+                @for (hero of lastsHeroes(); track $index) {
+                    <app-hero-card 
+                        [hero]="hero" 
+                        class="homepage-card"
+                        (click)="goToHeroDetail(hero)" 
+                    />
+                }
+            </div>
+            <button class="btn-view-more" (click)="goToHeroList()">
+                Voir plus
+            </button>
         </div>
-        <h2 class="lasts-heroes_title">DERNIERS AJOUTS</h2>
-        <div class="lasts-heroes_list">
-            @for (hero of lastsHeroes(); track $index) {
-                <app-hero-card 
-                    [hero]="hero" 
-                    class="homepage-card"
-                    (click)="goToHeroDetail(hero)" 
-                />
-            }
-        </div>
-        <button class="btn-view-more" (click)="goToHeroList()">
-            Voir plus
-        </button>
     </div>
-</div>
+}
+
   

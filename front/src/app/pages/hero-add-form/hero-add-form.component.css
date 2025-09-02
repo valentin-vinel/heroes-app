@@ -130,11 +130,11 @@
         grid-column: 1/2;
         grid-row: 1/4;
         width: 150px;
-        height: 600px;
+        height: 500px;
         transition: width 0.4s ease-in-out;
     }
     .hp_preview:hover {
-        height: 600px;
+        height: 500px;
         width: 400px;
     }
     .hp_preview > img {

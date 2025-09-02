@@ -6,11 +6,12 @@ import { HomepageService } from '../../services/homepage.service';
 import { HttpClientModule } from '@angular/common/http';
 import { CommonModule } from '@angular/common';
 import { HeroCardComponent } from "../../shared/hero-card/hero-card.component";
+import { LoadingComponent } from "../../shared/loading/loading.component";
 
 @Component({
   selector: 'app-homepage',
   standalone: true,
-  imports: [CommonModule, HttpClientModule, HeroCardComponent],
+  imports: [CommonModule, HttpClientModule, HeroCardComponent, LoadingComponent],
   templateUrl: './homepage.component.html',
   styleUrl: './homepage.component.css'
 })

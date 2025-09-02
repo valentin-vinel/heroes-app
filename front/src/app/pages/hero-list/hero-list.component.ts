@@ -7,11 +7,12 @@ import { toSignal } from '@angular/core/rxjs-interop';
 import { CommonModule } from '@angular/common';
 import { HttpClientModule } from '@angular/common/http';
 import { HeroCardComponent } from "../../shared/hero-card/hero-card.component";
+import { LoadingComponent } from "../../shared/loading/loading.component";
 
 @Component({
   selector: 'app-hero-list',
   standalone: true,
-  imports: [CommonModule, HttpClientModule, HeroCardComponent],
+  imports: [CommonModule, HttpClientModule, HeroCardComponent, LoadingComponent],
   templateUrl: './hero-list.component.html',
   styleUrl: './hero-list.component.css'
 })

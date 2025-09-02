@@ -1,13 +1,17 @@
 <div class="background"></div>
 
-<div class="container">
-    <div class="heroes-list" >
-      @for (hero of heroList(); track $index) {
-        <app-hero-card 
-          [hero]="hero" 
-          class="list-page-card"
-          (click)="goToHeroDetail(hero)" 
-        />
-      }
-    </div>
-</div>
+@if (!heroList()) {
+    <app-loading></app-loading>
+} @else {
+  <div class="container">
+      <div class="heroes-list" >
+        @for (hero of heroList(); track $index) {
+          <app-hero-card 
+            [hero]="hero" 
+            class="list-page-card"
+            (click)="goToHeroDetail(hero)" 
+          />
+        }
+      </div>
+  </div>
+}
