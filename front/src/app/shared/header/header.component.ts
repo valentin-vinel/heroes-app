@@ -14,7 +14,7 @@ export class HeaderComponent implements OnDestroy {
 
   isMenuOpen = false;
   readonly #router = inject(Router);
-  readonly #authService = inject(AuthService)
+  readonly authService = inject(AuthService)
 
   #logoutSubscription: Subscription | null = null
 
@@ -23,7 +23,7 @@ export class HeaderComponent implements OnDestroy {
   }
 
   logout() {
-    this.#logoutSubscription = this.#authService.logout().subscribe({
+    this.#logoutSubscription = this.authService.logout().subscribe({
       next: _ => {
         this.#router.navigate(['login']);
       },
