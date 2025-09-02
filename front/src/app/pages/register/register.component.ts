@@ -14,13 +14,13 @@ import { User } from '../../models/user.model';
 })
 export class RegisterComponent {
 
- private formBuilder = inject(FormBuilder);
-  private authService = inject(AuthService);
-  private router = inject(Router);
+  #formBuilder = inject(FormBuilder);
+  readonly #authService = inject(AuthService);
+  readonly #router = inject(Router);
 
-  private registerSubscription: Subscription | null = null;
+  #registerSubscription: Subscription | null = null;
 
-  registerFormGroup = this.formBuilder.group({
+  registerFormGroup = this.#formBuilder.group({
     'username': ['', [Validators.required]],
     'email': ['', [Validators.required]],
     'password': ['', [Validators.required]]
@@ -29,11 +29,11 @@ export class RegisterComponent {
   invalidCredentials = false
 
   register() {
-    this.registerSubscription = this.authService.register(
+    this.#registerSubscription = this.#authService.register(
       this.registerFormGroup.value as RegisterCredentials
     ).subscribe({
       next: (result: User | null | undefined) => {
-        this.router.navigate(['/'])
+        this.#router.navigate(['/'])
       },
       error: error => {
         console.log(error)
@@ -47,7 +47,7 @@ export class RegisterComponent {
   // }
 
   ngOnDestroy(): void {
-    this.registerSubscription?.unsubscribe();
+    this.#registerSubscription?.unsubscribe();
   }
 
 }

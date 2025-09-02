@@ -17,18 +17,18 @@ import { HeroCardComponent } from "../../shared/hero-card/hero-card.component";
 })
 export class HeroListComponent {
   
-  private router = inject(Router);
-  private heroService = inject(HeroService);
+  readonly #router = inject(Router);
+  readonly #heroService = inject(HeroService);
   
-  heroList = toSignal<Hero[]>(this.heroService.getHeroes());
+  heroList = toSignal<Hero[]>(this.#heroService.getHeroes());
 
   goToHeroDetail(hero: Hero) {
     console.log('allo', this.heroList)
-    this.router.navigate(['/hero', hero.id])
+    this.#router.navigate(['/hero', hero.id])
   }
 
   goToAddHeroForm() {
-    this.router.navigate(['/add-hero'])
+    this.#router.navigate(['/add-hero'])
   }
 
 }

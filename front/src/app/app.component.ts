@@ -13,10 +13,10 @@ import { FooterComponent } from "./shared/footer/footer.component";
 })
 export class AppComponent {
 
-  private router = inject(Router);
+  readonly #router = inject(Router);
 
   goToAddHeroForm() {
-    this.router.navigate(['add-hero'])
+    this.#router.navigate(['add-hero'])
   }
 
 }

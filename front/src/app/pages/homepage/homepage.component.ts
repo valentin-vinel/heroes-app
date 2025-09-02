@@ -16,18 +16,18 @@ import { HeroCardComponent } from "../../shared/hero-card/hero-card.component";
 })
 export class HomepageComponent {
 
-  private router = inject(Router);
-  private homepageService = inject(HomepageService);
+  readonly #router = inject(Router);
+  readonly #homepageService = inject(HomepageService);
   
-  firstsHeroes = toSignal<Hero[]>(this.homepageService.getFirstsHeroes());
-  lastsHeroes = toSignal<Hero[]>(this.homepageService.getLastsHeroes());
+  firstsHeroes = toSignal<Hero[]>(this.#homepageService.getFirstsHeroes());
+  lastsHeroes = toSignal<Hero[]>(this.#homepageService.getLastsHeroes());
 
   goToHeroDetail(hero: Hero) {
-    this.router.navigate(['/hero', hero.id])
+    this.#router.navigate(['/hero', hero.id])
   }
 
   goToHeroList() {
-    this.router.navigate(['heroes'])
+    this.#router.navigate(['heroes'])
   }
 
 }

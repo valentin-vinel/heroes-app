@@ -14,13 +14,13 @@ import { User } from '../../models/user.model';
 })
 export class LoginComponent implements OnDestroy {
 
-  private formBuilder = inject(FormBuilder);
-  private authService = inject(AuthService);
-  private router = inject(Router);
+  #formBuilder = inject(FormBuilder);
+  readonly #authService = inject(AuthService);
+  readonly #router = inject(Router);
 
-  private loginSubscription: Subscription | null = null;
+  #loginSubscription: Subscription | null = null;
 
-  loginFormGroup = this.formBuilder.group({
+  loginFormGroup = this.#formBuilder.group({
     'email': ['', [Validators.required]],
     'password': ['', [Validators.required]]
   })
@@ -28,11 +28,11 @@ export class LoginComponent implements OnDestroy {
   invalidCredentials = false
 
   login() {
-    this.loginSubscription = this.authService.login(
+    this.#loginSubscription = this.#authService.login(
       this.loginFormGroup.value as LoginCredentials
     ).subscribe({
       next: (result: User | null | undefined) => {
-        this.router.navigate(['/'])
+        this.#router.navigate(['/'])
       },
       error: error => {
         console.log(error)
@@ -42,11 +42,11 @@ export class LoginComponent implements OnDestroy {
   }
 
   goToRegisterForm() {
-    this.router.navigate(['register'])
+    this.#router.navigate(['register'])
   }
 
   ngOnDestroy(): void {
-    this.loginSubscription?.unsubscribe();
+    this.#loginSubscription?.unsubscribe();
   }
 
 }

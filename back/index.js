@@ -23,18 +23,8 @@ app.use(cors(corsOptions));
 // Body parser pour spécifier que l'on reçoit du JSON dans le body des requetes
 app.use(express.json());
 
-// Parser les cookies dans les requêtes entrantes, permet d'acceder à req.cookies 
+// Parser les cookies dans les requêtes entrantes, permet d'acceder à req.cookies
 app.use(cookieParser());
-
-// Ici, je vais indiquer que je souhaite lancer mon application depuis le lancement de l'API (port 5000)
-// J'indique à Express que je souhaite servir mon application cliente sur la racine de mon url (http://localhost:3000)
-// Pour cela, je lui indique la racine de mon dossier actuel ainsi que l'endroit où se situe le 'build' de mon app client
-// app.use(express.static(path.resolve(import.meta.dirname, "../front/build")));
-
-app.use((req, res, next) => {
-	console.log("Passage middleware global :", req.method, req.url);
-	next();
-  });
 
 app.get("/", (req, res) => {
 	res.send("Welcome to the Marvel-app API!");

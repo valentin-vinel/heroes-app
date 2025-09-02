@@ -15,15 +15,15 @@ import { HeroService } from '../../services/hero.service';
 })
 export class HeroAddFormComponent implements OnInit, OnDestroy {
 
-  private heroService = inject(HeroService);
-  private route = inject(ActivatedRoute);
-  private router = inject(Router);
-  private fb = inject(FormBuilder);
-  private formValuesSubscription: Subscription | null = null;
-  private routeSubscription: Subscription | null = null;
-  private saveSubscription: Subscription | null = null;
+  readonly #heroService = inject(HeroService);
+  readonly #route = inject(ActivatedRoute);
+  readonly #router = inject(Router);
+  readonly #fb = inject(FormBuilder);
+  #formValuesSubscription: Subscription | null = null;
+  #routeSubscription: Subscription | null = null;
+  #saveSubscription: Subscription | null = null;
   
-  formGroup = this.fb.group({
+  formGroup = this.#fb.group({
     hero_name:['New Hero', [Validators.required]],
     firstname:['New', [Validators.required]],
     lastname:['Hero', [Validators.required]],
@@ -52,10 +52,10 @@ export class HeroAddFormComponent implements OnInit, OnDestroy {
   heroId = -1
 
   ngOnInit(): void {
-    this.formValuesSubscription = this.formGroup.valueChanges.subscribe(data => {
+    this.#formValuesSubscription = this.formGroup.valueChanges.subscribe(data => {
 			this.hero = Object.assign(new Hero(), data);
 		});
-    this.routeSubscription = this.route.params.subscribe(params => {
+    this.#routeSubscription = this.#route.params.subscribe(params => {
       if (params['id']) {
         this.heroId = parseInt(params['id']);
       }
@@ -63,8 +63,8 @@ export class HeroAddFormComponent implements OnInit, OnDestroy {
   }
 
   ngOnDestroy(): void {
-		this.formValuesSubscription?.unsubscribe();
- 		this.routeSubscription?.unsubscribe();
+		this.#formValuesSubscription?.unsubscribe();
+ 		this.#routeSubscription?.unsubscribe();
  	}
 
   submit(event: Event) {
@@ -79,12 +79,12 @@ export class HeroAddFormComponent implements OnInit, OnDestroy {
 
 		let saveObservable;
 		if (this.heroId === -1) {
-			saveObservable = this.heroService.add(payload);
+			saveObservable = this.#heroService.add(payload);
 		} else {
 			payload.id = this.heroId;
-			saveObservable = this.heroService.update(payload);
+			saveObservable = this.#heroService.update(payload);
 		}
-		this.saveSubscription = saveObservable.subscribe(_ => {
+		this.#saveSubscription = saveObservable.subscribe(_ => {
 			this.navigateBack();
 		})
 	}
@@ -95,7 +95,7 @@ export class HeroAddFormComponent implements OnInit, OnDestroy {
   }
 
   navigateBack() {
-    this.router.navigate(['/']);
+    this.#router.navigate(['/']);
   }
 
 }

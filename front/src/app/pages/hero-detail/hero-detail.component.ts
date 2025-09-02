@@ -23,23 +23,23 @@ export class HeroDetailComponent implements OnInit {
     name_color: ''
   }
 
-  private route = inject(ActivatedRoute);
-  private router = inject(Router);
-  private heroService = inject(HeroService)
+  readonly #route = inject(ActivatedRoute);
+  readonly #router = inject(Router);
+  readonly #heroService = inject(HeroService)
   showDeleteModal = false;
 
   ngOnInit() {
-    const heroId: string | null = this.route.snapshot.paramMap.get('id');
+    const heroId: string | null = this.#route.snapshot.paramMap.get('id');
 
     if(heroId) {
-      this.heroService.getHeroById(+heroId).subscribe(hero => {
+      this.#heroService.getHeroById(+heroId).subscribe(hero => {
         this.hero = hero;
       });
     }
   }
 
   goToHeroList() {
-    this.router.navigate(['/'])
+    this.#router.navigate(['/'])
   }
 
   goToDeleteModal() {
@@ -50,7 +50,7 @@ export class HeroDetailComponent implements OnInit {
   }
   confirmDelete() {
     if (this.hero.id !== undefined) {
-    this.heroService.delete(this.hero.id).subscribe(() => {
+    this.#heroService.delete(this.hero.id).subscribe(() => {
       console.log('Suppression confirmée');
       this.closeModal();
       this.goToHeroList();
